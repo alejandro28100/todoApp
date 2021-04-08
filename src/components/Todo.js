@@ -1,5 +1,7 @@
 //Todo.js
 import React from 'react'
+import Checkmark from "./Checkmark";
+
 
 class Todo extends React.Component {
     constructor(props) {
@@ -12,17 +14,20 @@ class Todo extends React.Component {
 
     }
 
-    handleClick(e) {
-        e.preventDefault();
+    handleClick() {
         this.setState({ done: !this.state.done });
     }
 
     render() {
+
+        const todo = {
+            text: this.props.text,
+            done: this.state.done,
+            handleClick: this.handleClick
+        }
+
         return (
-            <div onClick={this.handleClick} className={`todo-item ${this.state.done ? "done" : ""}`}>
-                {this.props.text}
-                <button className="delete-btn"> &#10006; </button>
-            </div>
+            <Checkmark {...todo} />
         )
     }
 }

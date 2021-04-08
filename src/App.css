@@ -65,7 +65,7 @@
 .todo-item {
 	padding: 1em;
 }
-.todo-item.done {
+.todo-item > span.done {
 	text-decoration: line-through;
 }
 
