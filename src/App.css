@@ -1,38 +1,88 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+	height: 40vmin;
+	pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background-color: #282c34;
+	min-height: 30vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.form {
+	padding: 1em 2em;
+}
+
+.form button {
+	padding: .5em 1em;
+	background-color: royalblue;
+	border: none;
+	border-radius: 5px;
+	font-size: 1em;
+	color: white;
+	font-weight: 500;
+}
+.form input {
+	padding: .5em;
+	border: solid 1px #282c34;
+	border-radius: 5px;
+	font-size: 1em;
+	margin-right: 10px;
+}
+
+.todo-list {
+	list-style-type: none;
+}
+/* App.css */
+.todo-item {
+	padding: 1em;
+}
+.todo-item.done {
+	text-decoration: line-through;
+}
+
+.todo-item input[type="checkbox"] {
+	margin: 1em;
+}
+
+.todo-item button.delete-btn {
+	border: none;
+	cursor: pointer;
+	background-color: rgb(241, 100, 100);
+	width: 2em;
+	border-radius: 50%;
+	height: 2em;
+	margin-left: 5px;
+}
+
+.todo-item button.delete-btn:hover {
+	background-color: lightcoral;
 }
