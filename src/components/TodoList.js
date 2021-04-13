@@ -1,24 +1,16 @@
 import React from 'react'
 import Todo from './Todo'
 
-const todos = [
-    { text: "Hacer ejercicio" },
-    { text: "Pasear a dubis" },
-    { text: "Leer el prework de BEDU :P" },
-    { text: "Escuchar un podcast" }
-];
-
-
-const TodoList = (props) => {
+function TodoList({todoList,handleClick}) {
     return (
         <ul className="todo-list">
             {
-                todos.map((todo) => {
-                    return <Todo text={todo.text} />
-                })
+                todoList.map((todo, index) =>
+                    <Todo key={index} text={todo.text} done={todo.done} handleClick={handleClick} todoindex={index} />)
             }
         </ul>
     )
+
 }
 
 export default TodoList

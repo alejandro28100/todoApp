@@ -1,35 +1,13 @@
 //Todo.js
 import React from 'react'
 import Checkmark from "./Checkmark";
+import PropTypes from "prop-types";
 
 
-class Todo extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            done: false
-        }
+const Todo = (props) => <Checkmark {...props} />
 
-        this.handleClick = this.handleClick.bind(this)
-
-    }
-
-    handleClick() {
-        this.setState({ done: !this.state.done });
-    }
-
-    render() {
-
-        const todo = {
-            text: this.props.text,
-            done: this.state.done,
-            handleClick: this.handleClick
-        }
-
-        return (
-            <Checkmark {...todo} />
-        )
-    }
-}
+Todo.propTypes = {
+    text: PropTypes.string.isRequired
+};
 
 export default Todo
