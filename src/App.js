@@ -9,14 +9,19 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      todoList: []
+    }
+  }
+  componentDidMount() {
+    this.setState({
       todoList: [{ text: "Hacer ejercicio", done: false },
       { text: "Pasear a dubis", done: false },
       { text: "Leer el prework de BEDU :P", done: false },
       { text: "Escuchar un podcast", done: false }]
-    }
-    this.handleClick = this.handleClick.bind(this)
+    });
   }
-  handleClick(e, n) {
+
+  handleToggle = (e, n) => {
     this.setState(state => {
       const list = this.state.todoList.map((elem, index) => {
         if (index === n) {
@@ -33,12 +38,41 @@ class App extends React.Component {
       }
     })
   }
+  handleDelete = (e, n) => {
+    this.setState(state => {
+      const list = this.state.todoList.filter((elem, index) => n !== index)
+      return {
+        ...state,
+        todoList: list
+      }
+    })
+  }
+  handleAdd = (e, newTodo) => {
+    const found = this.state.todoList.find(element => element.text === newTodo.text);
+    if (!found) {
+      this.setState(state => {
+        if (!found) {
+          return {
+            ...state,
+            todoList: [...state.todoList, newTodo]
+          }
+        }
+        return state;
+      });
+      
+    }
+    else {
+      return true;
+    }
+
+  }
+
   render() {
     return (
       <div className="App" >
         <Header />
-        <Form />
-        <TodoList todoList={this.state.todoList} handleClick={this.handleClick} />
+        <Form handleAdd={this.handleAdd} />
+        <TodoList todoList={this.state.todoList} handleToggle={this.handleToggle} handleDelete={this.handleDelete} />
       </div>
     );
   }

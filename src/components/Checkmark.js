@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Checkmark({ done, text, handleClick, todoindex }) {
+function Checkmark({ done, text, handleToggle, todoindex,handleDelete }) {
     return (
         <>
             <div className="todo-item">
-                <span onClick={(e) => handleClick(e, todoindex)} className={`${done ? "done" : ""}`}>
+                <span onClick={(e) => handleToggle(e, todoindex)} className={`${done ? "done" : ""}`}>
                     {text}
                 </span>
                 {done && <span>	&#10004;</span>}
-                <button className="delete-btn"> &#10006; </button>
+                <button className="delete-btn"  onClick={(e) => handleDelete(e, todoindex)}> &#10006; </button>
             </div>
         </>
     )
@@ -17,7 +17,7 @@ function Checkmark({ done, text, handleClick, todoindex }) {
 Checkmark.propTypes = {
     text: PropTypes.string.isRequired,
     done: PropTypes.bool.isRequired,
-    handleClick: PropTypes.func.isRequired
+    handleToggle: PropTypes.func.isRequired
 };
 
 export default Checkmark;
