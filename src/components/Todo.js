@@ -19,7 +19,8 @@ const Todo = ({ handler, id, text, done }) => {
 Todo.propTypes = {
     id: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired,
-    done: PropTypes.bool.isRequired
+    done: PropTypes.bool.isRequired,
+    handler: PropTypes.object
 }
 
 export default Todo

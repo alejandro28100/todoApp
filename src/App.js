@@ -16,13 +16,38 @@ const TODOS = [
 
 function App() {
   const [todos, setTodos] = useState(TODOS);
-  console.log(todos);
+
+  function handleAdd(todo) {
+    return setTodos([...todos, todo]);
+  }
+
+  function handleToggle(id) {
+    return setTodos([...todos].map(todo => {
+      if (todo.id === id) {
+        todo.done = !todo.done
+      }
+      return todo;
+    }))
+  };
+
+  function handleDelete(id) {
+    //Filtra el todo que corresponda con el parámetro id
+    //evitando que el array sufra alguna mutación 
+    return setTodos([...todos].filter(todo => todo.id !== id));
+  }
+
+  const handler = {
+    handleAdd,
+    handleToggle,
+    handleDelete
+  }
+
   return (
     <div className="App">
 
       <Header />
-      <Form />
-      <TodoList todos={todos} setTodos={setTodos} />
+      <Form todos={todos} handler={handler} />
+      <TodoList todos={todos} handler={handler} />
     </div>
   );
 }
