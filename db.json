@@ -1,0 +1,59 @@
+{
+  "todos": [
+    {
+      "id": 2,
+      "text": "Sesión 2 (Estado y propiedades)",
+      "done": true
+    },
+    {
+      "id": 3,
+      "text": "Sesión 3 (Ciclo de vida)",
+      "done": true
+    },
+    {
+      "id": 4,
+      "text": "Sesión 4 (Hooks)",
+      "done": true
+    },
+    {
+      "id": 5,
+      "text": "Sesión 5 (Hooks)",
+      "done": true
+    },
+    {
+      "id": 6,
+      "text": "Sesión 6 (Rutas)",
+      "done": false
+    },
+    {
+      "id": 7,
+      "text": "Sesión 7 (PWA)",
+      "done": false
+    },
+    {
+      "id": 8,
+      "text": "Sesión 8 (Material UI)",
+      "done": false
+    },
+    {
+      "text": "Nice",
+      "done": false,
+      "id": 326
+    },
+    {
+      "text": "Algo",
+      "done": false,
+      "id": 352
+    },
+    {
+      "text": "asdasdasd",
+      "done": false,
+      "id": 951
+    },
+    {
+      "text": "ñasldñasdas",
+      "done": false,
+      "id": 348
+    }
+  ]
+}
